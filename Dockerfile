@@ -8,8 +8,7 @@ RUN apk add --update build-base openssl-dev cmake musl-dev libmpdclient-dev curl
 	&& curl -Sl "https://codeload.github.com/notandy/ympd/tar.gz/v${YMPD_VERSION}" | tar xz \
 	&& cd ympd-${YMPD_VERSION} && mkdir build && cd build \
 	&& cmake .. -DCMAKE_INSTALL_PREFIX:PATH=/usr \
-	&& make \	
-	&& rm -rf /var/cache/apk/* \
+	&& make \
 	&& apk del build-base openssl-dev cmake musl-dev libmpdclient-dev wget tar
 
 ENV MPD_SERVER=localhost
