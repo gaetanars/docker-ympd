@@ -1,12 +1,12 @@
 FROM alpine
 MAINTAINER Gaëtan Ars <zenman94@free.fr>
 
-ENV YMPD_VERSION v1.3.0
+ENV YMPD_VERSION 1.3.0
 WORKDIR /ympd
 
 RUN apk add --update build-base openssl-dev cmake musl-dev libmpdclient-dev curl tar \
-	&& curl -Sl "https://github.com/notandy/ympd/archive/${YMPD_VERSION}.tar.gz" | tar xz \
-	&& cd ${YMPD_VERSION} && mkdir build && cd build \
+	&& curl -Sl "https://codeload.github.com/notandy/ympd/tar.gz/v${YMPD_VERSION}" | tar xz \
+	&& cd ympd-${YMPD_VERSION} && mkdir build && cd build \
 	&& cmake .. -DCMAKE_INSTALL_PREFIX:PATH=/usr \
 	&& make \	
 	&& rm -rf /var/cache/apk/* \
