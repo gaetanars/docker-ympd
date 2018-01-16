@@ -21,7 +21,6 @@ cd /tmp && rm -rf /tmp/*
 
 ENV MPD_SERVER=localhost
 ENV MPD_PORT=6600
-ENV WEBPORT=8080
 
-EXPOSE $WEBPORT
-CMD /usr/bin/ympd -h $MPD_SERVER -p $MPD_PORT -w $WEBPORT
+EXPOSE 8080
+CMD /usr/bin/ympd -h $MPD_SERVER -p $MPD_PORT -w 8080
