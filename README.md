@@ -9,7 +9,7 @@ Others are from SuperBFG7 (master branch) : https://github.com/SuperBFG7/ympd
 ## Usage
 
 ```
-docker create \
+docker run -d \
 --name=ympd \
 -e MPD_SERVER=<adress> -e MPD_PORT=<port>  \
 -p 8080:8080 \

@@ -1,5 +1,4 @@
-FROM alpine:3.7
-MAINTAINER Gaëtan Ars <zenman94@free.fr>
+FROM alpine:3.15
 
 RUN apk add --no-cache --virtual=build-dependencies \
 	build-base \
