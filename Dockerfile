@@ -10,7 +10,7 @@ RUN apk add --no-cache --virtual=build-dependencies \
 	tar && \
 apk add --no-cache \
 	libmpdclient \
-	libssl1.0 && \
+	libssl1.1 && \
 mkdir -p /tmp/source/ympd && \
 curl -Sl "https://codeload.github.com/SuperBFG7/ympd/tar.gz/master" | tar xz -C \
 	/tmp/source/ympd  --strip-components=1 && \
